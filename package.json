@@ -10,7 +10,8 @@
     "build:server": "vite build --ssr src/entry-server.tsx --outDir dist/server",
     "preview": "cross-env NODE_ENV=production node server",
     "build:preview": "npm run build && npm run preview",
-    "start": "node server"
+    "start": "node server",
+    "start:prod": "pm2-runtime start ecosystem.config.cjs --env production"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.8",
@@ -25,7 +26,8 @@
     "redux-persist": "^6.0.0",
     "sirv": "^2.0.4",
     "vite": "^5.2.10",
-    "@vitejs/plugin-react": "^4.2.1"
+    "@vitejs/plugin-react": "^4.2.1",
+    "pm2": "^5.3.0"
   },
   "devDependencies": {
     "@types/express": "^4.17.21",
